@@ -43,8 +43,9 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
+n_neighbors = 11
 clf = Pipeline(
-    steps=[("scaler", StandardScaler()), ("knn", KNeighborsClassifier(n_neighbors=11))]
+    steps=[("scaler", StandardScaler()), ("knn", KNeighborsClassifier(n_neighbors=n_neighbors))]
 )
 ```
 
@@ -59,7 +60,6 @@ dataset to observe the difference.
 
 ```python
 import matplotlib.pyplot as plt
-
 from sklearn.inspection import DecisionBoundaryDisplay
 
 _, axs = plt.subplots(ncols=2, figsize=(12, 5))
@@ -87,7 +87,7 @@ for ax, weights in zip(axs, ("uniform", "distance")):
     _ = disp.ax_.set_title(
         f"3-Class classification\n(k={clf[-1].n_neighbors}, weights={weights!r})"
     )
-plt.savefig('3-Class-classification.png')
+plt.savefig('knn-plot.png')
 
 plt.show()
 

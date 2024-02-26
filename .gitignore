@@ -1,2 +1,6 @@
-/venv
+# .gitignore
+*.log
+*.pyc
+__pycache__/
+venv/
 README.md.bak
