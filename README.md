@@ -95,7 +95,7 @@ plt.show()
 
 
     
-![png](plot_classification_files/plot_classification_5_0.png)
+![png](notebook_files/notebook_5_0.png)
     
 
 
