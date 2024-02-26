@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+NOTEBOOK=plot_classification
+jupyter nbconvert --to markdown ${NOTEBOOK}.ipynb
+if [ -f README.md ]; then
+    mv README.md README.md.bak
+fi
+mv ${NOTEBOOK}.md README.md
